@@ -1,0 +1,135 @@
+.game-list {
+  padding-top: 20px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 840px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    li {
+      height: 100%;
+      min-height: 190px;
+      width: 320px;
+      background: $game-item-background;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      box-sizing: border-box;
+      padding-bottom: 6px;
+      box-shadow: 1px 1px 30px 1px transparentize($color: $base-color, $amount: .8);
+      transition: all .5s ease;
+      margin-top: 20px;
+
+      @media screen and (min-width: 840px) {
+        width: calc(100% / 5);
+        margin-right: 20px;
+        margin-top: 0;
+      }
+
+      &:hover {
+          img {
+            opacity: .9;
+            transition: all .5s ease;
+          }
+      }
+
+      img {
+        display: block;
+        height: 110px;
+        width: 100%;
+      }
+
+      .price-container {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-right: 5px;
+      }
+
+      .title {
+        padding-top: 10px;
+        padding-left: 10px;
+        text-transform: uppercase;
+        font-size: 0.9333rem;
+        font-weight: 600;
+        line-height: 1.133rem;
+        height: 50px;
+        cursor: default;
+
+        &.owned {
+          opacity: .5;
+        }
+      }
+
+      .price {
+        display: block;
+        border: 1px solid transparentize($color: $base-color, $amount: .7);
+        box-shadow: 1px 1px 1px transparentize($color: $base-color, $amount: .9);
+        border-radius: 6px;
+        height: 25px;
+        width: 55px;
+        padding: 5px;
+        font-size: .8rem;
+        font-weight: 600;
+        text-align: center;
+        color: transparentize($color: $secondary-grey, $amount: .25);
+        transition: all .2s ease-in;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &.owned {
+          opacity: .5;
+          cursor: default;
+          text-transform: uppercase;
+
+          &:hover {
+            border: 1px solid transparentize($color: $base-color, $amount: .7);
+            background: none;
+          }
+        }
+
+        &:hover {
+          background: transparentize($color: $secondary-grey, $amount: .9);
+          border: 1px solid transparentize($color: $base-color, $amount: .95);
+          transition: all .2s ease-in;
+        }
+      }
+
+      .discount {
+        display: block;
+        border: 0;
+        box-shadow: 1px 1px 1px transparentize($color: $base-color, $amount: .9);
+        border-radius: 6px;
+        height: 25px;
+        width: 45px;
+        padding: 6px;
+        color: transparentize($color: $white, $amount: .2);
+        font-size: .8rem;
+        font-weight: 600;
+        background: $discount;
+        margin-right: 5px;
+        text-align: center;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      .thumbnail-container {
+        height: 110px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

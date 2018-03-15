@@ -1,0 +1,45 @@
+.game-of-the-week {
+  position: relative;
+
+  h1 {
+    color: #262626;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-weight: 700;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 20px 3px transparentize($color: $base-color, $amount: .8);
+  }
+
+  .GlobalneOtwarcieGotfryda {
+    display: none;
+
+    @media screen and (min-width: 840px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: block;
+      margin-top: 40px;
+      width: 390px;
+      height: 20px;
+      padding-top: 10px;
+      padding-bottom: 25px;
+      background: $discount;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, $light-green, $discount);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to bottom, $light-green, $discount); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      color: $white;
+      font-weight: 600;
+      border: 1px solid #258363;
+      border-radius: 6px;
+      text-align: center;
+      z-index: -1;
+    }
+  }
+}
